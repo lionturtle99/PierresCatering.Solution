@@ -30,10 +30,7 @@ namespace Bakery.Models
 
     public static Vendor Find(int searchId)
     {
-      string name = "fail test";
-      string description = "fail test";
-      Vendor failVendor = new Vendor(name, description);
-      return failVendor;
+      return _vendorList[searchId-1];
     }
   }
 }
