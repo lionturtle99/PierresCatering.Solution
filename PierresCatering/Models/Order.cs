@@ -9,7 +9,7 @@ namespace Bakery.Models
     public string Date { get; set; }
     public int Price { get; set; }
     public int Id { get; }
-    private List<Order> _orderList = new List<Order> { };
+    private static List<Order> _orderList = new List<Order> { };
 
     public Order(string title, string description, string date, int price)
     {
@@ -23,13 +23,13 @@ namespace Bakery.Models
 
     public static List<Order> GetAll()
     {
-      string title = "test title";
-      string description = "test description";
-      string date = "02/04/2022";
-      int price = 250;
-      Order failOrder = new Order(title, description, date, price);
-      List<Order> failList = new List<Order> { failOrder };
-      return failList;
-    }    
+      return _orderList;
+    } 
+
+    
+    public static void ClearAll()
+    {
+      _orderList.Clear();
+    }   
   }
 }

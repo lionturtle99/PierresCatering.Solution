@@ -8,7 +8,7 @@ namespace Bakery.Models
     public string Description { get; set; }
 
     public int Id { get; }
-    private List<Vendor> _vendorList = new List<Vendor> { };
+    private static List<Vendor> _vendorList = new List<Vendor> { };
 
     public Vendor(string name, string description)
     {
@@ -20,12 +20,12 @@ namespace Bakery.Models
 
     public static List<Vendor> GetAll()
     {
-      string name = "Fail name";
-      string description = "Fail description";
-      Vendor failVendor = new Vendor(name, description);
-      List<Vendor> failList = new List<Vendor>{ failVendor};
+      return _vendorList;
+    }
 
-      return failList;
+    public static void ClearAll()
+    {
+      _vendorList.Clear();
     }
 
   }
