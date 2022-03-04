@@ -20,5 +20,16 @@ namespace Bakery.Models
       _orderList.Add(this);
       Id = _orderList.Count;
     }
+
+    public static List<Order> GetAll()
+    {
+      string title = "test title";
+      string description = "test description";
+      string date = "02/04/2022";
+      int price = 250;
+      Order failOrder = new Order(title, description, date, price);
+      List<Order> failList = new List<Order> { failOrder };
+      return failList;
+    }    
   }
 }
