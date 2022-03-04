@@ -81,5 +81,18 @@ namespace Bakery.Tests
       int result = testVendor.Id;
       Assert.AreEqual(1, result);
     }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectVendor_Vendor()
+    {
+      string name = "test name";
+      string description = "test description";
+      string name0 = "Coffee shop wants cookies";
+      string description0 = "cookies";
+      Vendor testVendor = new Vendor(name, description);
+      Vendor testVendor0 = new Vendor(name0, description0);
+      Vendor result = Vendor.Find(2);
+      Assert.AreEqual(testVendor0, result);
+    }
   }
 }
