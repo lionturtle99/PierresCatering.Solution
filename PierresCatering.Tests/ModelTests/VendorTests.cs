@@ -33,6 +33,20 @@ namespace Bakery.Tests
     }
 
     [TestMethod]
+    public void SetDescription_SetDescription_String()
+    {
+      string name = "test name";
+      string description = "test";
+      Vendor testVendor = new Vendor(name, description);
+
+      string updatedDescription = "updated test";
+      testVendor.Description = updatedDescription;
+      string result = testVendor.Description;
+
+      Assert.AreEqual(updatedDescription, result);
+    }
+
+    [TestMethod]
     public void GetAll_ReturnsEmptyList_VendorList()
     {
       List<Vendor> testList = new List<Vendor> { };
@@ -40,6 +54,32 @@ namespace Bakery.Tests
       List<Vendor> result = Vendor.GetAll();
 
       CollectionAssert.AreEqual(testList, result);
+    }
+
+    [TestMethod]
+    public void GetAll_ReturnsVendor_VendorList()
+    {
+      string name = "test name";
+      string description = "test description";
+      string name0 = "Coffee shop wants cookies";
+      string description0 = "cookies";
+      Vendor testVendor = new Vendor(name, description);
+      Vendor testVendor0 = new Vendor(name0, description0);
+      List<Vendor> testList = new List<Vendor> { testVendor, testVendor0 };
+
+      List<Vendor> result = Vendor.GetAll();
+
+      CollectionAssert.AreEqual(testList, result);
+    }
+
+    [TestMethod]
+    public void GetId_VendorsInstantiateWithAnIdAndGetterReturns_Int()
+    {
+      string name = "test";
+      string description = "test";
+      Vendor testVendor = new Vendor(name, description);
+      int result = testVendor.Id;
+      Assert.AreEqual("fail", result);
     }
   }
 }
