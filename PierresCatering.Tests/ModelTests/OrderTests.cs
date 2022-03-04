@@ -93,7 +93,7 @@ namespace Bakery.Tests
 
       int result = testOrder.Id;
 
-      Assert.AreEqual("fail", result);
+      Assert.AreEqual(1, result);
     }
   }
 }

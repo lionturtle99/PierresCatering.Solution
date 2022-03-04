@@ -79,7 +79,7 @@ namespace Bakery.Tests
       string description = "test";
       Vendor testVendor = new Vendor(name, description);
       int result = testVendor.Id;
-      Assert.AreEqual("fail", result);
+      Assert.AreEqual(1, result);
     }
   }
 }
