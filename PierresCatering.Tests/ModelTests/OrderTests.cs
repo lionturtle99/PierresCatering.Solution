@@ -28,7 +28,7 @@ namespace Bakery.Tests
       int price = 250;
       Order testOrder = new Order(title, description, date, price);
       string result = testOrder.Description;
-      Assert.AreEqual("good fail", result);
+      Assert.AreEqual(description, result);
     }
   }
 }

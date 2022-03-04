@@ -24,7 +24,7 @@ namespace Bakery.Tests
       string description = "test description";
       Vendor testVendor = new Vendor(name, description);
       string result = testVendor.Description;
-      Assert.AreEqual("good fail", result);
+      Assert.AreEqual(description, result);
     }
   }
 }
