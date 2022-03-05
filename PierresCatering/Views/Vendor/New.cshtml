@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My To-Do List!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="~/css/styles.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="navbar">
+      <nav>
+        <img src="~/img/logo.png" alt="bakery logo" class="bakery-logo">
+        <ul>
+          <li><a href='/'>BACK TO THE HOME PAGE</a></li>
+          <li><a href="/vendors">BACK TO VENDORS PAGE</a></li>
+          <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">CLICK HERE</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="container">
+      <h1>Add A Vendor</h1>
+
+      <h2>Enter vendor information here:</h2>
+      <form action="/vendors" method="post">
+        <label for="vendorName">Vendor Name</label>
+        <input id="vendorName" name="vendorName" type="text">
+        <label for="description">Description</label>
+        <input id="description" name="description" type="text">
+        <button class="btn btn-info" type="submit">Add New Vendor</button>
+      </form>
+    </div>
+  </body>
+</html>

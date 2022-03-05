@@ -1,18 +1,29 @@
 using Microsoft.AspNetCore.Mvc;
-using Bakery.Models;
 using System.Collections.Generic;
-using System;
+using Bakery.Models;
 
 namespace Bakery.Controllers
 {
   public class VendorController : Controller
   {
-    [HttpGet("/vendors")]
+    [HttpGet("/Vendors")]
     public ActionResult Index()
     {
-      Console.WriteLine("It made it to VendorController.cs");
       List<Vendor> allVendors = Vendor.GetAll();
       return View(allVendors);
+    }
+
+    [HttpGet("/vendors/new")]
+    public ActionResult New()
+    {
+      return View();
+    }
+
+    [HttpPost("/Vendors")]
+    public ActionResult Create(string vendorName, string descritpion)
+    {
+      Vendor newVendor = new Vendor(vendorName, descritpion);
+      return RedirectToAction("Index");
     }
   }
 }
