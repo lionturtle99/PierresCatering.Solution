@@ -4,7 +4,7 @@ using Bakery.Models;
 
 namespace Bakery.Controllers
 {
-  public class VendorController : Controller
+  public class VendorsController : Controller
   {
     [HttpGet("/Vendors")]
     public ActionResult Index()
