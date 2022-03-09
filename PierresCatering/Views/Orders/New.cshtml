@@ -1,23 +1,35 @@
 @{
   Layout = "_Layout";
 }
+<div class="navbar">
+  <nav>
+    <img src="~/img/logo.png" alt="bakery logo" class="bakery-logo">
+    <ul>
+      <li><a href='/'>BACK TO THE HOME PAGE</a></li>
+      <li><a href="/vendors">PIERRES VENDORS</a></li>
+      <li><a href="/vendors/new">ADD A NEW VENDOR</a></li>
+      <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">CLICK HERE</a></li>
+    </ul>
+  </nav>
+</div>
+<div class="container">
+  <h1>Add a new order to @Model.Name</h1>
 
-<h1>Add a new order to @Model.Name</h1>
+  <form action="/vendors/@Model.Id/orders" method="post">
+    <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
 
-<form action="/vendors/@Model.Id/orders" method="post">
-  <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
+    <label for="orderTitle">Order Title</label>
+    <input id="orderTitle" name="orderTitle" type="text">
 
-  <label for="orderTitle">Order Title</label>
-  <input id="orderTitle" name="orderTitle" type="text">
+    <label for="orderDescription">Order Description</label>
+    <input id="orderDescription" name="orderDescription" type="text">
 
-  <label for="orderDescription">Order Description</label>
-  <input id="orderDescription" name="orderDescription" type="text">
+    <label for="orderDate">Order Date</label>
+    <input id="orderDate" name="orderDate" type="text">
 
-  <label for="orderDate">Order Date</label>
-  <input id="orderDate" name="orderDate" type="text">
+    <label for="orderPrice">Order Price</label>
+    <input id="orderPrice" name="orderPrice" type="number">
 
-  <label for="orderPrice">Order Price</label>
-  <input id="orderPrice" name="orderPrice" type="number">
-  
-  <button type='submit'>Add Order</button>
-</form>
+    <button type='submit'>Add Order</button>
+  </form>
+</div>

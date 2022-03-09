@@ -1,0 +1,27 @@
+@{
+  Layout = "_Layout";
+}
+<div class="navbar">
+  <nav>
+    <img src="~/img/logo.png" alt="bakery logo" class="bakery-logo">
+    <ul>
+      <li><a href='/'>BACK TO THE HOME PAGE</a></li>
+      <li><a href="/vendors">PIERRES VENDORS</a></li>
+      <li><a href="/vendors/new">ADD A NEW VENDOR</a></li>
+      <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">CLICK HERE</a></li>
+    </ul>
+  </nav>
+</div>
+<div class="container">
+  <h1>Vendor Order Details: </h1>
+  <h2>Vendor: @Model["vendor"].Name</h2>
+  <h3>@Model["order"].Title</h3>
+  <h4>@Model["order"].Description</h4>
+  <p>@Model["order"].Date</p>
+  <p>@Model["order"].Price</p>
+
+  <div class="url">
+    <a href='/vendors/@Model["vendor"].Id/orders/new'>Add another order</a>
+    <a href='/vendors'>View all vendors</a>
+  </div>
+</div>

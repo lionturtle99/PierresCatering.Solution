@@ -44,6 +44,11 @@ body{
 h1{
   margin-bottom: 5em;
 }
+a:hover{
+  text-decoration: none;
+  color:blueviolet;
+  font-size: 1em;
+}
 div#footer {
   position:fixed;
   bottom:0px;
