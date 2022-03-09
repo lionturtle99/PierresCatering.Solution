@@ -104,7 +104,7 @@ namespace Bakery.Tests
       int price = 1000;
       Order testOrder = new Order(title, orderDescription, date, price);
       List<Order> testList = new List<Order> { testOrder };
-      string name = "test Category";
+      string name = "test Vendor";
       string description = "test description";
       Vendor testVendor = new Vendor(name, description);
 
