@@ -31,6 +31,7 @@ nav ul li a:hover{
 }
 body{
   background: linear-gradient(rgb(255, 81, 0), orange, pink, rgb(0, 204, 255));
+  color: white;
   text-align: center;
   font-family: fantasy;
   height: 100vh;
