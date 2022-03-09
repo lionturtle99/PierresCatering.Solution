@@ -47,6 +47,16 @@ namespace Bakery.Tests
     }
 
     [TestMethod]
+    public void GetId_ReturnsVendorId_Int()
+    {
+      string name = "test";
+      string description = "test";
+      Vendor testVendor = new Vendor(name, description);
+      int result = testVendor.Id;
+      Assert.AreEqual(1, result);
+    }
+
+    [TestMethod]
     public void GetAll_ReturnsEmptyList_VendorList()
     {
       List<Vendor> testList = new List<Vendor> { };
@@ -57,7 +67,7 @@ namespace Bakery.Tests
     }
 
     [TestMethod]
-    public void GetAll_ReturnsVendor_VendorList()
+    public void GetAll_ReturnsAllVendorObjects_VendorList()
     {
       string name = "test name";
       string description = "test description";
@@ -73,16 +83,6 @@ namespace Bakery.Tests
     }
 
     [TestMethod]
-    public void GetId_VendorsInstantiateWithAnIdAndGetterReturns_Int()
-    {
-      string name = "test";
-      string description = "test";
-      Vendor testVendor = new Vendor(name, description);
-      int result = testVendor.Id;
-      Assert.AreEqual(1, result);
-    }
-
-    [TestMethod]
     public void Find_ReturnsCorrectVendor_Vendor()
     {
       string name = "test name";
@@ -93,6 +93,25 @@ namespace Bakery.Tests
       Vendor testVendor0 = new Vendor(name0, description0);
       Vendor result = Vendor.Find(2);
       Assert.AreEqual(testVendor0, result);
+    }
+
+    [TestMethod]
+    public void AddOrder_AssociatesOrderWithVendor_OrderList()
+    {
+      string title = "MakersCoffeeCompany";
+      string orderDescription = "a million cookies";
+      string date = "02/04/2022";
+      int price = 1000;
+      Order testOrder = new Order(title, orderDescription, date, price);
+      List<Order> testList = new List<Order> {  };
+      string name = "test Category";
+      string description = "test description";
+      Vendor testVendor = new Vendor(name, description);
+
+      testVendor.AddOrder(testOrder);
+      List<Order> result = testVendor.Orders;
+
+      CollectionAssert.AreEqual(testList, result);
     }
   }
 }

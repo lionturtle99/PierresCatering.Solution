@@ -11,16 +11,27 @@
       <nav>
         <img src="~/img/logo.png" alt="bakery logo" class="bakery-logo">
         <ul>
-          <li><a href="/vendors">PIERRES VENDORS</a></li>
+          <li><a href='/'>BACK TO THE HOME PAGE</a></li>
           <li><a href="/vendors/new">ADD A NEW VENDOR</a></li>
           <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">CLICK HERE</a></li>
         </ul>
       </nav>
     </div>
     <div class="container">
-      <h1>Welcome to Pierre's Catering Company</h1>
-      <h3><a href='/vendors'>View vendors</a></h3>
-      <h3><a href='/vendors/new'>Add a new Vendor</a></h3>
+      @using Bakery.Models;
+
+      <h1>Vendors</h1>
+
+      @if (@Model.Count == 0)
+      {
+        <h3>No vendors have been added yet!</h3>
+        <p>Click on the link above to add new vendors</p>
+      } 
+
+      @foreach (Vendor vendor in Model)
+      {
+        <h3><a href='/vendors/@vendor.Id'>@vendor.Name</a></h3>
+      }
     </div>
   </body>
 </html>
